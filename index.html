@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Firebase</title>
+	
+	<!--initalization from firebase code snippest-->
+
+<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC3rMtcklK2p2I0LqopBidd_oJYzBireLY",
+    authDomain: "music-2aa3b.firebaseapp.com",
+    databaseURL: "https://music-2aa3b.firebaseio.com",
+    storageBucket: "music-2aa3b.appspot.com",
+    messagingSenderId: "863856507168"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<!--the code below initializes the signin widget from firebaseUI web-->
+
+    <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />
+    <script type="text/javascript">
+      // FirebaseUI config.
+      var uiConfig = {
+        signInSuccessUrl: 'loggedIn.html',
+        signInOptions: [
+          // Leave the lines as is for the providers you want to offer your users.
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+          firebase.auth.EmailAuthProvider.PROVIDER_ID
+        ],
+        // Terms of service url.
+        tosUrl: '<your-tos-url>'
+      };
+
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      // The start method will wait until the DOM is loaded.
+      ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+
+
+</head>
+<body >
+<h1 align="center" style="color: white;border: 20px;">Firebase Auth QuickStart Demo</h1>
+<fieldset>
+<legend style="width:relative;">Authentication</legend>
+<div id="firebaseui-auth-container"></div>
+</fieldset>
+</body>
+</html>
