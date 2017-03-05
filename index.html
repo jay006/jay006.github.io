@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Firebase</title>
-	
-	<!--initalization from firebase code snippest-->
+  <meta charset="utf-8">
+  <title>Firebase</title>
+  <style type="text/css">
+   #fire-container{
+    background: grey;
+    border:black solid;
+   } 
+  </style>
+  <!--initalization from firebase code snippest-->
+
 <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
 <script>
   // Initialize Firebase
@@ -40,15 +46,13 @@
       // The start method will wait until the DOM is loaded.
       ui.start('#firebaseui-auth-container', uiConfig);
     </script>
+
+
 </head>
-<style>
-	background:grey;
-	border: black solid;
-</style>
 <body >
 <h1 align="center" style="color: white;border: 20px;">Firebase Auth QuickStart Demo</h1>
-<div class="fire-container">	
-	<div id="firebaseui-auth-container"></div>
+<div class="fire-container">
+<div id="firebaseui-auth-container"></div>
 </div>
 </body>
 </html>

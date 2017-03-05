@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>EasyAuth</title>
+</head>
 <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
 <script>
   // Initialize Firebase
@@ -12,23 +16,20 @@
   };
   firebase.initializeApp(config);
 </script>
-<head>
-	<meta charset="utf-8">
-	<title>EasyAuth</title>
-</head>
+
 <body>
 
 <!--A simple example script to add text to the page that display the user's Display Name and Email-->
 
-<script type="text/javascript">
+<script >
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
-    document.body.innerHTML='<h1> Congrats '+user.displayName+' ,you are done! </h1><h2>Now get back to what you love building </h2><h2>Need to verify your email address or reset yout password? Firebase can handle all of that for you usin the email provided: '+ user.email+'</h2> ';
-	
+    document.body.innerHTML+='<h1> Congrats '+ user.displayName +' ,you are done! </h1><h2>Now get back to what you love building </h2><h2>Need to verify your email address or reset yout password? Firebase can handle all of that for you usin the email provided: '+ user.email+'</h2> ';
+  
   } else {
     // No user is signed in.
-  	console.log("no user signed in");
+    console.log("no user signed in");
   }
 });
 </script>
